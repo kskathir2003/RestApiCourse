@@ -14,27 +14,28 @@ import java.util.*;
 @RestController
 @RequestMapping("/Order")
 public class OrderController {
-
+	
 	@Autowired
 	OrderService os;
 	
 	@GetMapping("showorders")
-	public List<Order> showOrders(){
+	public List<Orders> showOrders(){
 		return os.showOrders();
 	}
 	
 	@PostMapping("addorder")
-	public Order addOrder(Order order) {
+	public Orders addOrder(Orders order) {
 		return os.addOrder(order);
 	}
 	
 	@PutMapping("updateorder")
-	public Order updateOrder(Order order) {
+	public Orders updateOrder(Orders order) {
 		return os.updateOrder(order);
 	}
 	
 	@DeleteMapping("deleteorder")
-	public String deleteorder(Order order) {
+	public String deleteorder(Orders order) {
 		return os.deleteOrder(order);
 	}
+	
 }

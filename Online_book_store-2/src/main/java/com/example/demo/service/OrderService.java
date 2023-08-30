@@ -12,19 +12,19 @@ public class OrderService {
 	@Autowired
 	OrderRepo or;
 	
-	public List<Order> showOrders(){
+	public List<Orders> showOrders(){
 		return or.findAll();
 	}
 	
-	public Order addOrder(Order order) {
+	public Orders addOrder(Orders order) {
 		return or.save(order);
 	}
 	
-	public Order updateOrder(Order order) {
+	public Orders updateOrder(Orders order) {
 		return or.saveAndFlush(order);
 	}
 	
-	public String deleteOrder(Order order) {
+	public String deleteOrder(Orders order) {
 		or.delete(order);
 		return "deleted successfully";
 	}

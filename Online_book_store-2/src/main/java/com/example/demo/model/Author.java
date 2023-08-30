@@ -1,7 +1,12 @@
 package com.example.demo.model;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -12,6 +17,11 @@ public class Author {
 	private int id;
 	private String name;
 	private String biography;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name="auth_id")
+	private List<Book> books;
+	
 	public int getId() {
 		return id;
 	}
@@ -40,6 +50,5 @@ public class Author {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
+		
 }
